@@ -38,7 +38,7 @@
         setTimeout(function(){
           React.unmountComponentAtNode(document.getElementById('CachedContent'));
   	      React.renderComponent(<ProductListContainer products={response}/> , document.getElementById('Content'));
-        } , 2000); // Add's two seconds longer than what we want just for demo
+        } , 1000); // Add's two seconds longer than what we want just for demo
       }).catch(function(error){
   	     React.renderComponent(<ErrorComponent errorMessage={error}/> , document.getElementById('Content'));
       });
@@ -54,10 +54,9 @@
       //Build up the request
       var xhr = new XMLHttpRequest();
       console.log("testing");
-      var url = 'https://google.com?keyword=' + query,
+      var url = 'http://productfeedtest.wandoso.com/?keyword=' + query,
           result;
-          console.log(url); 
-      xhr.open('GET' , url);
+      xhr.open('GET' , url, true);
       //Success!!!
       xhr.onload = function(e){
         if(this.status === 200){
