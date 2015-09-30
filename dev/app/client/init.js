@@ -56,7 +56,7 @@
       console.log("testing");
       var url = 'https://productfeedtest.wandoso.com/?keyword=' + query,
           result;
-          console.log(url);
+          console.log(url); 
       xhr.open('GET' , url);
       //Success!!!
       xhr.onload = function(e){
