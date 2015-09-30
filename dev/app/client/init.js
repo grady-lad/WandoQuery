@@ -38,7 +38,7 @@
         setTimeout(function(){
           React.unmountComponentAtNode(document.getElementById('CachedContent'));
   	      React.renderComponent(<ProductListContainer products={response}/> , document.getElementById('Content'));
-        } , 2000); // Add's two seconds longer than what we want
+        } , 2000); // Add's two seconds longer than what we want just for demo
       }).catch(function(error){
   	     React.renderComponent(<ErrorComponent errorMessage={error}/> , document.getElementById('Content'));
       });
