@@ -54,7 +54,7 @@
       //Build up the request
       var xhr = new XMLHttpRequest();
       console.log("testing");
-      var url = 'productfeedtest.wandoso.com/?keyword=' + query,
+      var url = '//productfeedtest.wandoso.com/?keyword=' + query,
           result;
       xhr.open('GET' , url, true);
       //Success!!!
