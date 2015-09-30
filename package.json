@@ -9,9 +9,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "browserify": "^5.10.1",
-    "express": "^4.8.6",
-    "express-handlebars": "2.0.1",
     "gulp": "^3.8.7",
     "gulp-autoprefixer": "^3.0.1",
     "gulp-if": "^1.2.4",
@@ -20,8 +17,6 @@
     "gulp-sass": "^2.0.4",
     "gulp-streamify": "0.0.5",
     "gulp-uglify": "^0.3.2",
-    "mocha": "2.2.5",
-    "node-jsx": "^0.11.0",
     "node-normalize-scss": "^1.0.3",
     "react": "^0.11.1",
     "reactify": "^0.14.0",
@@ -29,6 +24,11 @@
     "watchify": "^1.0.2"
   },
   "dependencies": {
-    "multer": "^1.0.3"
+    "browserify": "^5.10.1",
+    "express": "^4.8.6",
+    "express-handlebars": "2.0.1",
+    "node-jsx": "^0.11.0",
+    "react": "^0.11.1",
+    "reactify": "^0.14.0",
   }
 }
