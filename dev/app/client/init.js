@@ -53,7 +53,7 @@
     return new Promise(function(resolve, reject){
       //Build up the request
       var xhr = new XMLHttpRequest();
-      var url = 'http://productfeedtest.wandoso.com/?keyword=' + query,
+      var url = 'https://productfeedtest.wandoso.com/?keyword=' + query,
           result;
       xhr.open('GET' , url);
       //Success!!!
