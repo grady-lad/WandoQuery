@@ -68,7 +68,9 @@ gulp.task('sassy' , function(){
 	console.log('compiling sass');
  	return gulp
  		.src('./dev/app/public/stylesheets/*scss')
- 		.pipe(sass()).on('error', sass.logError)
+ 		.pipe(sass({
+ 			includePaths: require('node-normalize-scss').includePaths
+ 		})).on('error', sass.logError)
  		.pipe(autoprefixer())
  		.pipe(gulp.dest('./build/stylesheets'))
 });

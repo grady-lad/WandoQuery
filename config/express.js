@@ -1,9 +1,8 @@
-
 var express = require('express');
 var nodejsx = require('node-jsx');
-//var exphbs  = require('express-handlebars');
 
 var isProduction = process.env.NODE_ENV === 'production';
+//What dist to use when in dev or
 var publicDir = isProduction ? '/dist' : '/../dev/app';
 
 module.exports = function(app){

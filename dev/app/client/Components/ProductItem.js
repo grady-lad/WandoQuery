@@ -2,30 +2,43 @@
 var React = require('react');
 var ProductItem = React.createClass({
 
-
-  calculateShipping: function(){
-  	//Need to add a switch statement here to
-  	// find the shipping value
+  /** What to display for the shipping costs**/
+  calculateShipping: function(ship){
+    if(typeof ship === 'object'){
+      return "+ shipping costs"
+    }
+    if(ship === "$0.00"){
+      return "free shipping";
+    }else{
+      return "+ " + ship + " shipping";
+    }
+    return undefined;
   },
-  //Need to fix the link problem
+
   render: function(){
   	var product = this.props.data;
-  	var shipping = product.shipping_price !== null ? product.shipping_price : "free shipping";
+  	var shipping = this.calculateShipping(product.shipping_price);
+    // The product item div
     return (
-    	<div>
-    	  <a href ={product.click_out_link}>
-    	    <img src={product.thumb_photo_url}></img>
-    	    <p> {product.title} </p>
-    	    <p> {product.price}</p>
-    	    <img className="brandLogo" src={product.merchant_logo_url}></img>
-    	    <p>{shipping}</p>
-    	    <button> show more :L </button>
-    	  </a>
-    	</div>
+      <a href={product.click_out_link}>
+    	  <div className="productSection">
+          <div className="productImage">
+    	      <img src={product.thumb_photo_url}></img>
+          </div>
+    	    <div className="productTitle"> {product.title} </div>
+    	    <div className="productPrice"> {product.price}</div>
+          <div className="productShipping">{shipping}</div>
+          <div className="brandLogo">
+    	      <img className="brandLogo" src={product.merchant_logo_url}></img>
+          </div>
+          <div className="productMore">
+    	      <button> Show More </button>
+          </div>
+    	  </div>
+      </a>
     )
   }
 
 });
-
 
 module.exports = ProductItem;
